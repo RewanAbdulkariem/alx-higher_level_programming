@@ -2,4 +2,4 @@
 
 for num in range(0, 99):
         print(f"{num:02d},", end=" ")
-print(99)
+print(f"{num+1}")
