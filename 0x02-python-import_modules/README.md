@@ -1,7 +1,7 @@
 # Python Import & Modules
 
 ## Description
-This project focuses on Python programming concepts related to importing modules, working with command line arguments, and using functions from external files. The repository contains several Python scripts, each with specific tasks and learning objectives.
+This project focuses on Python programming concepts related to importing modules, working with command-line arguments, and using functions from external files. The repository contains several Python scripts, each with specific tasks and learning objectives.
 
 ## Learning Objectives
 By the end of this project, you will be able to:
@@ -31,7 +31,25 @@ By the end of this project, you will be able to:
 1. Clone this repository to your local machine.
 2. Navigate to the project directory.
 3. Run each script using the following format:
+   ```bash
+   ./script_name.py
 
-```bash
-./script_name.py
+## Example
 
+- To run the `0-add.py` script, open your terminal and execute the following command:
+  ```bash
+  $ ./0-add.py
+
+- The output will display the result of adding 1 and 2:
+   1 + 2 = 3
+## Resources
+
+Here are some helpful resources for understanding the topics covered in this project:
+
+- [Python Modules](https://docs.python.org/3/tutorial/modules.html) - Learn about Python modules and how to import functions from other files.
+
+- [Python Standard Library - Command Line Arguments](https://docs.python.org/3/tutorial/stdlib.html#command-line-arguments) - Explore the Python standard library documentation to understand how to work with command line arguments in Python programs.
+
+- [Pycodestyle - Style Guide for Python Code](https://pypi.org/project/pycodestyle/) - Pycodestyle is a tool that helps you adhere to the PEP 8 style guide for writing clean and readable Python code.
+
+These resources provide valuable information and reference materials to deepen your understanding of the concepts covered in this project.
