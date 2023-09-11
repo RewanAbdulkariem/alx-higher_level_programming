@@ -1,4 +1,5 @@
-#include <stddef.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 /**
  * reverseList - Reverse a singly-linked list in place.
