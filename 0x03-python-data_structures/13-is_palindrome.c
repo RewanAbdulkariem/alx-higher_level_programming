@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
-listint_t *reverseList(listint_t *head);
 /**
  * is_palindrome - Check if a singly-linked list of integers is a palindrome.
  * @head: Pointer to the head of the linked list.
@@ -13,10 +12,10 @@ int is_palindrome(listint_t **head)
 	listint_t *slow = *head;
 	listint_t *fast = *head;
 
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	if (*head == NULL)
 		return (1);
 
-	while (fast != NULL && fast->next != NULL)
+	while (fast && fast->next && fast->next->next)
 	{
 		slow = slow->next;
 		fast = fast->next->next;
@@ -25,7 +24,7 @@ int is_palindrome(listint_t **head)
 
 	listint_t *firstHalf = *head;
 
-	while (secondHalf != NULL)
+	while (secondHalf && firstHalf)
 	{
 		if (firstHalf->n != secondHalf->n)
 			return (0);
