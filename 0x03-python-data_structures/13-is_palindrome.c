@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "lists.h"
+
 /**
- * is_palindrome - Check if a singly-linked list of integers is a palindrome.
- * @head: Pointer to the head of the linked list.
- *
- * Return: 1 if it is a palindrome, 0 otherwise.
- */
+* is_palindrome - Check if a singly-linked list of integers is a palindrome.
+* @head: Pointer to the head of the linked list.
+*
+* Return: 1 if it is a palindrome, 0 otherwise.
+*/
 int is_palindrome(listint_t **head)
 {
 	listint_t *slow = *head;
@@ -20,37 +21,39 @@ int is_palindrome(listint_t **head)
 		slow = slow->next;
 		fast = fast->next->next;
 	}
-	listint_t *secondHalf = reverseList(slow);
 
-	listint_t *firstHalf = *head;
-
-	while (secondHalf && firstHalf)
+	slow = reverseList(&slow);
+	fast = *head;
+	while (slow && fast)
 	{
-		if (firstHalf->n != secondHalf->n)
+		if (slow->n != fast->n)
 			return (0);
-		firstHalf = firstHalf->next;
-		secondHalf = secondHalf->next;
+		slow = slow->next;
+		fast = fast->next;
 	}
+
 	return (1);
 }
+
 /**
- * reverseList - Reverse a singly-linked list in place.
- * @head: Pointer to the head of the linked list.
- *
- * Return: Pointer to the new head of the reversed list.
- */
-listint_t *reverseList(listint_t *head)
+* reverse_list - Reverse a linked list
+* @head: The list
+*
+* Return: Pointer to the new head
+*/
+listint_t *reverseList(listint_t **head)
 {
-	listint_t *current = head;
 	listint_t *prev = NULL;
 	listint_t *next = NULL;
 
-	while (current != NULL)
+	while (*head)
 	{
-		next = current->next;
-		current->next = prev;
-		prev = current;
-		current = next;
+		next = (*head)->next;
+		(*head)->next = prev;
+		prev = *head;
+		*head = next;
 	}
-	return (prev);
+
+	*head = prev;
+	return (*head);
 }
