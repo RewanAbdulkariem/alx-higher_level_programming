@@ -41,7 +41,7 @@ class MagicClass:
         Returns:
             float: The area of the circle (pi * radius^2).
         """
-        return self.__radius ** 2 * math.pi
+        return (self.__radius ** 2 * math.pi)
 
     def circumference(self):
         """
@@ -50,4 +50,4 @@ class MagicClass:
         Returns:
             float: The circumference of the circle (2 * pi * radius).
         """
-        return 2 * math.pi * self.__radius
+        return (2 * math.pi * self.__radius)
