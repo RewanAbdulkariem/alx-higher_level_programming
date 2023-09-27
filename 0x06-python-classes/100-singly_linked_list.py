@@ -19,7 +19,7 @@ class Node:
             data (int): The data to be stored in the node.
             next_node (Node, optional): The next node in the
             linked list. Default is None.
-        
+
         Raises:
             TypeError: If data is not an integer or if next_node
             is not a Node object.
@@ -58,9 +58,10 @@ class Node:
         Getter method for retrieving the next_node attribute.
 
         Returns:
-            Node: The next node in the linked list, or None if there is no next node.
+            Node: The next node in the linked list
+            , or None if there is no next node.
         """
-        return self.__next_node 
+        return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
@@ -77,6 +78,7 @@ class Node:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
+
 class SinglyLinkedList:
     """
     Represents a singly linked list.
@@ -86,7 +88,8 @@ class SinglyLinkedList:
 
     Methods:
         __init__(self): Initializes an empty singly linked list.
-        sorted_insert(self, value): Inserts a new Node into the correct sorted position in the list (increasing order).
+        sorted_insert(self, value): Inserts a new Node into
+        the correct sorted position in the list (increasing order).
         __str__(self): Returns a string representation of the linked list.
     """
     def __init__(self):
@@ -94,7 +97,7 @@ class SinglyLinkedList:
         Initializes an empty singly linked list.
         """
         self.__head = None
-    
+
     def sorted_insert(self, value):
         """
         Inserts a new Node into the correct sorted position in the list
@@ -103,8 +106,9 @@ class SinglyLinkedList:
             value (int): The value to insert into the list.
 
         Description:
-            This method inserts a new node with the given value into the linked list in such a way that the list remains sorted in increasing order.
-
+            This method inserts a new node with the given value into
+            the linked list in such a way that the list remains sorted
+            in increasing order.
         """
         node = Node(value)
         cur = self.__head
@@ -116,6 +120,7 @@ class SinglyLinkedList:
                 cur = cur.next_node
             node.next_node = cur.next_node
             cur.next_node = node
+
     def __str__(self):
         s = ""
         current = self.__head
