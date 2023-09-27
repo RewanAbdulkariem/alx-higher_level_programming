@@ -96,17 +96,17 @@ class Square:
         if self.__size == 0:
             print()
         else:
-            for i in range(1,self.__position[1]):
+            for i in range(self.__position[1]):
                 print()
             for i in range(self.__size):
                 print(' ' * self.__position[0] + '#' * self.__size)
-    
+
     def __str__(self):
         """
         Return a string representation of the Square object for printing.
 
-        This method generates a string that represents the square with 
-        the '#' character and spaces to position it based on the 
+        This method generates a string that represents the square with
+        the '#' character and spaces to position it based on the
         'position' attribute of the Square.
 
         Returns:
