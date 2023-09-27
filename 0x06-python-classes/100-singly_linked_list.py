@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Defines the classes Node and SinglyLinkedList"""
 
 
 class Node:
@@ -86,7 +87,7 @@ class SinglyLinkedList:
     Represents a singly linked list.
 
     Attributes:
-        head (Node): The head of the linked list.
+        __head (Node): The head of the linked list.
 
     Methods:
         __init__(self): Initializes an empty singly linked list.
