@@ -122,10 +122,16 @@ class SinglyLinkedList:
             cur.next_node = node
 
     def __str__(self):
-        s = ""
-        current = self.__head
+        """
+        Returns a string representation of the linked list.
 
-        while current:
-            s += str(current.data) + '\n'
+        Returns:
+            str: A string containing the values of the linked list nodes
+            , one per line.
+        """
+        result = []
+        current = self.__head
+        while current is not None:
+            result.append(str(current.data))
             current = current.next_node
-        return s[: -1]
+        return "\n".join(result)
