@@ -110,9 +110,17 @@ class SinglyLinkedList:
         cur = self.__head
         if cur is None or value < cur.data:
             node.next_node = cur
-            self.head = node
+            self.__head = node
         else:
             while cur.next_node is not None and cur.next_node.data < value:
                 cur = cur.next_node
             node.next_node = cur.next_node
             cur.next_node = node
+    def __str__(self):
+        s = ""
+        current = self.__head
+
+        while current:
+            s += str(current.data) + '\n'
+            current = current.next_node
+        return s[: -1]
