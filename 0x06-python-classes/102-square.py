@@ -59,31 +59,87 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
+    """
+    Compares if two squares have equal areas.
+
+    Args:
+        other (Square): The other square to compare.
+
+    Returns:
+        bool: True if the areas are equal, False otherwise.
+    """
     def __eq__(self, other):
         if isinstance(other, Square):
             return self.area() == other.area()
         return False
 
+    """
+    Compares if two squares have unequal areas.
+
+    Args:
+        other (Square): The other square to compare.
+
+    Returns:
+        bool: True if the areas are unequal, False otherwise.
+    """
     def __ne__(self, other):
         if isinstance(other, Square):
             return self.area() != other.area()
         return True
 
+    """
+    Compares if one square has a smaller area than another.
+
+    Args:
+        other (Square): The other square to compare.
+
+    Returns:
+       bool: True if the first square has a smaller area, False otherwise.
+    """
     def __lt__(self, other):
         if isinstance(other, Square):
             return self.area() < other.area()
         return NotImplemented
 
+    """
+    Compares if one square has a smaller or equal area than another.
+
+    Args:
+        other (Square): The other square to compare.
+
+    Returns:
+        bool: True if the first square has a smaller or equal area
+        , False otherwise.
+"""
     def __le__(self, other):
         if isinstance(other, Square):
             return self.area() <= other.area()
         return NotImplemented
 
+    """
+    Compares if one square has a larger area than another.
+
+    Args:
+        other (Square): The other square to compare.
+
+    Returns:
+            bool: True if the first square has a larger area, False otherwise.
+    """
     def __gt__(self, other):
         if isinstance(other, Square):
             return self.area() > other.area()
         return NotImplemented
 
+    """
+    Compares if one square has a larger or equal area than another.
+
+    Args:
+        other (Square): The other square to compare.
+
+    Returns:
+        bool: True if the first square has a larger or equal area
+        , False otherwise.
+    """
     def __ge__(self, other):
         if isinstance(other, Square):
             return self.area() >= other.area()
