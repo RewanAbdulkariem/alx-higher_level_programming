@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Define a MagicClass matching exactly a bytecode provided by ALX.
-"""
+"""Define a MagicClass matching exactly a bytecode provided by ALX."""
 
 import math
 
@@ -20,6 +18,7 @@ class MagicClass:
         circumference(self): Calculates and returns the circumference
         of the circle.
     """
+
     def __init__(self, radius=0):
         """
         Initializes a new MagicClass instance with the given radius.
@@ -31,7 +30,7 @@ class MagicClass:
             TypeError: If radius is not a number (float or integer).
         """
         self.__radius = 0
-        if type(radius) is not int or type(raduis) is not float:
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
         self.__radius = radius
 
