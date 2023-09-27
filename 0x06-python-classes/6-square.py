@@ -81,8 +81,9 @@ class Square:
     """
     @position.setter
     def position(self, value):
-        if type(value) != tuple or len(value) != 2 or any(type(i) != int for i in value) or any(j < 0 for j in value):
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     """
     Prints the square to stdout using '#' characters.
