@@ -7,7 +7,7 @@ prints a square with the character #.
 
 def print_square(size):
     '''
-    prints a square with "#"'s that has a length of size 
+    prints a square with "#"'s that has a length of size
     '''
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
