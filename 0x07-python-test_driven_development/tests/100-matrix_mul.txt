@@ -1,0 +1,64 @@
+The "100-matrix_mul" module
+======================
+
+Using "matrix_mul"
+-------------------
+Importing the function from the module:
+    >>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+Checking for module docstring:
+	>>> m = __import__("100-matrix_mul").__doc__
+	>>> len(m) > 1
+	True
+
+
+Checking for function docstring:
+	>>> f = __import__("100-matrix_mul").matrix_mul.__doc__
+        >>> len(f) > 1
+        True
+
+Checking for no args:
+	>>> matrix_mul()
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Checking for missing arg:
+	>>> matrix_mul([[9, 4, 4], [2, 8, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+Checking for regular input:
+	>>> matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
+	[[7, 10], [15, 22]]
+
+Checking for non list input:
+	>>> matrix_mul("Hello", [[1, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list or m_b must be a list
+
+Checking for non list of lists input:
+	>>> matrix_mul(["Betty", "Holberton"], [[1, 2]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list of lists or m_b must be a list of lists
+
+Checking for empty list:
+	>>> matrix_mul([], [[9, 4]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a can't be empty or m_b can't be empty
+
+Checking for non integer input:
+	>>> matrix_mul([[1, 2], ["Hello", 9]], [[9, 4], [2, 5]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a should contain only integers or floats or m_b should contain only integers or floats
+
+Checking for wrong size:
+	>>> matrix_mul([[8, 4, 2], [10, 7, 2]], [[1, 2], [4, 9]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_a and m_b can't be multiplied
