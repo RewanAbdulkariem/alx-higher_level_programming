@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 '''
 divides all elements of a matrix.
-This module contains a function, matrix_divided(matrix, div),that takes two integers
-or floats as arguments and returns their division as an integer.
+This module contains a function, matrix_divided(matrix, div)
+,that takes two integers or floats as arguments and returns
+their division as an integer.
 '''
 
 
@@ -10,9 +11,11 @@ def matrix_divided(matrix, div):
     '''
     Divides all elements of a matrix by a number and returns a new matrix.
     '''
-    
-    if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-        raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+
+    if not isinstance(matrix, list) or
+    not all(isinstance(row, list) for row in matrix):
+        raise TypeError("matrix must be a matrix \
+                    (list of lists) of integers/floats")
 
     row_size = len(matrix[0])
     if any(len(row) != row_size for row in matrix):
@@ -22,7 +25,7 @@ def matrix_divided(matrix, div):
         raise TypeError("div must be a number")
 
     if div == 0:
-            raise ZeroDivisionError("division by zero")
+        raise ZeroDivisionError("division by zero")
 
     try:
         result_matrix = []
@@ -31,5 +34,5 @@ def matrix_divided(matrix, div):
             result_matrix.append(new_row)
     except (TypeError, ZeroDivisionError) as e:
         raise e
-    
+
     return result_matrix
