@@ -12,8 +12,10 @@ def matrix_divided(matrix, div):
     Divides all elements of a matrix by a number and returns a new matrix.
     '''
     try:
-        if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix):
-            raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+        if not isinstance(matrix, list) or not all(
+           isinstance(row, list) for row in matrix):
+            raise TypeError("matrix must be a matrix (list of lists) "
+                            "of integers/floats")
 
         row_size = len(matrix[0])
         if any(len(row) != row_size for row in matrix):
@@ -27,8 +29,9 @@ def matrix_divided(matrix, div):
 
         for row in matrix:
             if not all(isinstance(element, (int, float)) for element in row):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-    
+                raise TypeError("matrix must be a matrix (list of lists) "
+                                "of integers/floats")
+
         result_matrix = []
         for row in matrix:
             new_row = [round(element / div, 2) for element in row]
