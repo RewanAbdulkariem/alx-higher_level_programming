@@ -12,8 +12,8 @@ def matrix_divided(matrix, div):
     Divides all elements of a matrix by a number and returns a new matrix.
     '''
 
-    if not isinstance(matrix, list) or
-    not all(isinstance(row, list) for row in matrix):
+    if not isinstance(matrix, list) or not all(
+           isinstance(row, list) for row in matrix):
         raise TypeError("matrix must be a matrix \
                     (list of lists) of integers/floats")
 
