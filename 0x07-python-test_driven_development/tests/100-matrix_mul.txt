@@ -55,7 +55,7 @@ Checking for non integer input:
 	>>> matrix_mul([[1, 2], ["Hello", 9]], [[9, 4], [2, 5]])
 	Traceback (most recent call last):
 	...
-	TypeError: m_a should contain only integers or floats or m_b should contain only integers or floats
+	TypeError: m_a should contain only integers or floats
 
 Checking for wrong size:
 	>>> matrix_mul([[8, 4, 2], [10, 7, 2]], [[1, 2], [4, 9]])
