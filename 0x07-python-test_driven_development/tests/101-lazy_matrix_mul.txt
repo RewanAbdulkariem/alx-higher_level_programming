@@ -32,3 +32,31 @@ Checking for regular input:
 	>>> lazy_matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]])
 	array([[ 7, 10],
 	       [15, 22]])
+
+Checking for non list input:
+	>>> lazy_matrix_mul("Hello", [[1, 2]])
+	Traceback (most recent call last):
+	...
+	numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U5'), dtype('<U1')) -> None
+
+	>>> lazy_matrix_mul([[1, 2]], "Hello")
+	Traceback (most recent call last):
+	...
+	numpy.core._exceptions._UFuncNoLoopError: ufunc 'multiply' did not contain a loop with signature matching types (dtype('<U1'), dtype('<U5')) -> None
+
+Checking for empty list:
+	>>> lazy_matrix_mul([[]], [[9, 4]])
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (1,0) and (1,2) not aligned: 0 (dim 1) != 1 (dim 0)
+
+	>>> lazy_matrix_mul([[9, 4]], [])
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (1,2) and (0,) not aligned: 2 (dim 1) != 0 (dim 0)
+
+Checking for non integer input:
+	>>> lazy_matrix_mul([[1, 2], ["Hello", 9]], [[9, 4], [2, 5]])
+	Traceback (most recent call last):
+	...
+	ValueError: data type must provide an itemsize
