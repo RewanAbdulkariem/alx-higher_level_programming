@@ -56,7 +56,7 @@ Checking for non list of lists input:
 	TypeError: m_b must be a list of lists
 
 Checking for empty list:
-	>>> matrix_mul([], [[9, 4]])
+	>>> matrix_mul([[]], [[9, 4]])
 	Traceback (most recent call last):
 	...
 	ValueError: m_a can't be empty
