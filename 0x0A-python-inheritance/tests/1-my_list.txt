@@ -1,0 +1,42 @@
+The '1-my_list.py' module
+======================
+
+Using 'MyList'
+-------------------
+Importing the class from the module:
+    >>> MyList = __import__("1-my_list").MyList
+
+Checking for module docstring:
+	>>> m = __import__("1-my_list").__doc__
+	>>> len(m) > 1
+	True
+
+Checking for the class docstring:
+	>>> f = __import__("1-my_list").MyList.__doc__
+        >>> len(f) > 1
+        True
+
+Checking for the function inside class docstring:
+	>>> f = __import__("1-my_list").MyList.print_sorted.__doc__
+        >>> len(f) > 1
+        True
+
+Creating an instance of MyList:
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+
+Printing the original list:
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Sorting and printing the list:
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+
+Original list remains unchanged:
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
