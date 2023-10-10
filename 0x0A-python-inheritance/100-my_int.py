@@ -2,6 +2,8 @@
 """
 Module '100-my_int' inherits from int
 """
+
+
 class MyInt(int):
     """
     MyInt class inherits from int and inverts the == and != operators.
