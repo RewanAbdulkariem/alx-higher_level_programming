@@ -33,7 +33,7 @@ class Rectangle:
     def height(self, value):
         """property setter to set it"""
         if isinstance(value, int) and value >= 0:
-            self.__width = value
+            self.__height = value
         elif isinstance(value, int) and value < 0:
             raise ValueError('width must be >= 0')
         else:
