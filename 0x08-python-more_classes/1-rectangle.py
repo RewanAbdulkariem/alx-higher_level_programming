@@ -15,12 +15,12 @@ class Rectangle:
     
     def width(self):
         """ property to retrieve it """
-        return Rectangle.__width
+        return self.__width
 
     def width(self, value):
         """property setter to set it"""
         if isinstance(value, int) and value >= 0:
-            Rectangle.__width = value
+            self.__width = value
         elif isinstance(value, int) and value < 0:
             raise ValueError('width must be >= 0')
         else:
@@ -28,12 +28,12 @@ class Rectangle:
 
     def height(self):
         """ property to retrieve it """
-        return Rectangle.__height
+        return self.__height
 
     def height(self, value):
         """property setter to set it"""
         if isinstance(value, int) and value >= 0:
-            Rectangle.__width = value
+            self.__width = value
         elif isinstance(value, int) and value < 0:
             raise ValueError('width must be >= 0')
         else:
