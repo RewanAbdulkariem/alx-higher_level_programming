@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-
 """
 0-rectangle.py module
 """
+
 
 class Rectangle:
     """
