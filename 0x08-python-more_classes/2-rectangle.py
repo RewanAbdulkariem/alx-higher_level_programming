@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-1-rectangle.py module
+2-rectangle.py module
 """
 
 
@@ -42,3 +42,11 @@ class Rectangle:
             raise ValueError('height must be >= 0')
         else:
             raise TypeError('height must be an integer')
+
+    def area(self):
+        """returns the rectangle area"""
+        return (self.__height * self.__width)
+
+    def perimeter(self):
+        """returns the rectangle perimeter"""
+        return (2*(self.__height + self.__width))
