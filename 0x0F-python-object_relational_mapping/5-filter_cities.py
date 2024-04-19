@@ -27,9 +27,9 @@ try:
              ORDER BY id ASC;")
     query_rows = cursor.fetchall()
 
-    for row in query_rows:
-        if argv[4] in row:
-            print(row[1], end=", ")
+    city_names = [row[1] for row in query_rows if argv[4] in row]
+    print(", ".join(city_names))
+
     cursor.close()
     db_connection.close()
 
