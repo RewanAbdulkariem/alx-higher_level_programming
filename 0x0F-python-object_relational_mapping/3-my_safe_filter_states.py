@@ -22,12 +22,13 @@ try:
     cursor = db_connection.cursor()
 
     cursor.execute(
-        f"SELECT * FROM states WHERE BINARY name = '{argv[4]}'\
-             ORDER BY id ASC;")
+        "SELECT * FROM states\
+              ORDER BY id ASC;")
     query_rows = cursor.fetchall()
 
     for row in query_rows:
-        print(row)
+        if argv[4] in row:
+            print(row)
     cursor.close()
     db_connection.close()
 
