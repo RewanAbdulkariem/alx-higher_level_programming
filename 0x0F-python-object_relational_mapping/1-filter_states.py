@@ -21,7 +21,8 @@ try:
 
     cursor = db_connection.cursor()
 
-    cursor.execute("SELECT * FROM states WHERE name LIKE 'N%'ORDER BY id ASC;")
+    cursor.execute(
+        "SELECT * FROM states WHERE BINARY name LIKE 'N%'ORDER BY id ASC;")
     query_rows = cursor.fetchall()
 
     for row in query_rows:
