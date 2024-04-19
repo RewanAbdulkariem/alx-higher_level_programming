@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+Lists all State objects.
 """
 from sys import argv
 from sqlalchemy import create_engine
