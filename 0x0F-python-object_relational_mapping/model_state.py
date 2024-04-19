@@ -22,3 +22,7 @@ class State(Base):
     id = Column(Integer(), autoincrement=True,
                 nullable=False, primary_key=True)
     name = Column(String(128), nullable=False)
+
+    def __repr__(self):
+        """ representation """
+        return f"{self.id}: {self.name}"
