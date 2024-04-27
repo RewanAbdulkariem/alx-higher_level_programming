@@ -7,13 +7,13 @@ import sys
 import requests
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
     repository_name = sys.argv[1]
     owner_name = sys.argv[2]
 
     url = "https://api.github.com/repos/{}/{}/commits".format(
         owner_name, repository_name)
-    
+
     req = requests.get(url)
     commits = req.json()
 
