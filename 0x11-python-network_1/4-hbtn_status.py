@@ -3,6 +3,8 @@
 fetches https://alx-intranet.hbtn.io/status
 """
 import requests
+
+
 if __name__ == '__main__':
     html = requests.get('https://w3schools.com/python/demopage.htm')
     print("Body response:")
