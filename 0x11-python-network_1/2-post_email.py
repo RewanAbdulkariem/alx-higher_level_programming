@@ -11,7 +11,7 @@ import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    params = {'email': sys.argv[2]} 
+    params = {'email': sys.argv[2]}
 
     req = Request(url, urlencode(params).encode('utf-8'))
     with urlopen(req) as response:
