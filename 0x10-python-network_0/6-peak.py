@@ -3,6 +3,8 @@
 6-peak.py
 Created by Rewan 26 Apr
 """
+
+
 def find_peak(list_of_integers):
     """
     find a peak in a list of unsorted integers
