@@ -13,55 +13,47 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ Initializes instances """
         super().__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
 
+    @property
     def get_width(self):
-        """
-        function to get width
-        """
+        """ Getter for width """
         return self.__width
 
-    def set_width(self, width):
-        """
-        function to set value of width
-        """
-        self.__width = width
+    @width.setter
+    def width(self, value):
+        """ Setter for width """
+        self.__width = value
 
-    def get_height(self):
-        """
-        function to get width
-        """
+    @property
+    def height(self):
+        """ Getter for height """
         return self.__height
 
-    def set_height(self, height):
-        """
-        function to set value of width
-        """
-        self.__height = height
+    @height.setter
+    def height(self, value):
+        """ Setter for height """
+        self.__height = value
 
-    def get_x(self):
-        """
-        function to get width
-        """
+    @property
+    def x(self):
+        """ Getter for x """
         return self.__x
 
-    def set_x(self, x):
-        """
-        function to set value of width
-        """
-        self.__x = x
+    @x.setter
+    def x(self, value):
+        """ Setter for x """
+        self.__x = value
 
-    def get_y(self):
-        """
-        function to get width
-        """
+    @property
+    def y(self):
+        """ Getter for y """
         return self.__y
 
-    def set_y(self, y):
-        """
-        function to set value of width
-        """
-        self.__y = y
+    @y.setter
+    def y(self, value):
+        """ Setter for y """
+        self.__y = value
