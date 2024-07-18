@@ -45,3 +45,11 @@ class Base:
             dict_list = [obj.to_dictionary() for obj in list_objs]
             json_str = cls.to_json_string(dict_list)
             outfile.write(json_str)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        returns the list of the JSON string representation json_string
+        """
+        data = json.loads(json_string)
+        return data
