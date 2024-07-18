@@ -11,7 +11,8 @@ class Square(Rectangle):
     """
     def __init__(self, size, x=0, y=0, id=None):
         """
-        Initializes a square instance with size, position (x, y), and optional id.
+        Initializes a square instance with size, position (x, y)
+        and optional id.
         """
         super().__init__(size, size, x, y, id)
 
