@@ -78,10 +78,11 @@ class Base:
         returns a list of instances
         """
         filename = f"{cls.__name__}.json"
-        if os.path.isfile(filename) is not False:
+        if not os.path.isfile(filename):
             return []
         with open(filename, 'r') as f:
-            data = json.load(f)
+            data = f.read()
 
-        ls = [cls.create(**d) for d in data]
-        return ls
+        dict_list = cls.from_json_string(data)
+        instances = [cls.create(**d) for d in dict_list]
+        return instances
