@@ -2,7 +2,8 @@
 """
 module base.py
 """
-import json, os
+import json
+import os
 
 
 class Base:
@@ -77,7 +78,7 @@ class Base:
         returns a list of instances
         """
         filename = f"{cls.__name__}.json"
-        if os.path.isfile(filename) == False:
+        if os.path.isfile(filename) is not False:
             return []
         with open(filename, 'r') as f:
             data = json.load(f)
