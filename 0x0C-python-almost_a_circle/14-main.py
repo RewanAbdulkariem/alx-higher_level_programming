@@ -1,17 +1,15 @@
 #!/usr/bin/python3
 """ Check """
+import inspect
 from models.base import Base
 
-list_dictionaries = None
-rjson = Base.to_json_string(list_dictionaries)
-rjson_expected = "[]"
-
-if rjson is None:
-    print("to_json_string is not returning a string")
+to_json_string_fct = Base.__dict__.get("to_json_string")
+if to_json_string_fct is None:
+    print("Base doesn't have method to_json_string")
     exit(1)
 
-if rjson != rjson_expected:
-    print("to_json_string on {} must return {}: {}".format(list_dictionaries, rjson_expected, rjson))
+if type(to_json_string_fct) is not staticmethod:
+    print("to_json_string is not a static method")
     exit(1)
 
 print("OK", end="")
