@@ -2,7 +2,7 @@
 """
 module base.py
 """
-import json
+import json, os
 
 
 class Base:
@@ -55,3 +55,32 @@ class Base:
             return []
         data = json.loads(json_string)
         return data
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        returns an instance with all attributes already set
+        """
+        if cls.__name__ == "Rectangle":
+            dummy_instance = cls(1, 1)  # Create a dummy Rectangle instance
+        elif cls.__name__ == "Square":
+            dummy_instance = cls(1)  # Create a dummy Square instance
+        else:
+            return None
+
+        dummy_instance.update(**dictionary)
+        return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        returns a list of instances
+        """
+        filename = f"{cls.__name__}.json"
+        if os.path.isfile(filename) == False:
+            return []
+        with open(filename, 'r') as f:
+            data = json.load(f)
+
+        ls = [cls.create(**d) for d in data]
+        return ls
