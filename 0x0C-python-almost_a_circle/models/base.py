@@ -100,13 +100,13 @@ class Base:
         with open(filename, "w") as csvfile:
             writer = csv.writer(csvfile)
             if cls.__name__ == "Rectangle":
-                fields = ['ID', 'Width', 'Height', 'X', 'Y']
+                fields = ['id', 'width', 'height', 'x', 'y']
                 writer.writerow(fields)
                 for obj in list_objs:
                     writer.writerow(
                         [obj.id, obj.width, obj.height, obj.x, obj.y])
             elif cls.__name__ == "Square":
-                fields = ['ID', 'Size', 'X', 'Y']
+                fields = ['id', 'width', 'x', 'y']
                 writer.writerow(fields)
                 for obj in list_objs:
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
@@ -124,6 +124,7 @@ class Base:
         with open(filename, 'r') as csvfile:
             csvreader = csv.DictReader(csvfile)
             for row in csvreader:
+                row = {key: int(value) for key, value in row.items()}
                 obj = cls.create(**row)
                 instances.append(obj)
         return instances
