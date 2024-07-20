@@ -3,6 +3,7 @@
 module base.py
 """
 import json
+import csv
 import os
 
 
@@ -85,4 +86,44 @@ class Base:
 
         dict_list = cls.from_json_string(data)
         instances = [cls.create(**d) for d in dict_list]
+        return instances
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        serializes in CSV
+        """
+        if list_objs is None:
+            list_objs = []
+
+        filename = f"{cls.__name__}.csv"
+        with open(filename, "w") as csvfile:
+            writer = csv.writer(csvfile)
+            if cls.__name__ == "Rectangle":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+            elif cls.__name__ == "Square":
+                for obj in list_objs:
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        deserializes in CSV
+        """
+        filename = f"{cls.__name__}.csv"
+        if not os.path.isfile(filename):
+            return []
+
+        instances = []
+        with open(filename, 'r') as csvfile:
+            csvreader = csv.reader(csvfile)
+            for row in csvreader:
+                if cls.__name__ == "Rectangle":
+                    id, width, height, x, y = map(int, row)
+                    obj = cls.create(id=id, width=width, height=height, x=x, y=y)
+                elif cls.__name__ == "Square":
+                    id, size, x, y = map(int, row)
+                    obj = cls.create(id=id, size=size, x=x, y=y)
+                instances.append(obj)
         return instances
