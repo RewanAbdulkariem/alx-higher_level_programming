@@ -101,7 +101,8 @@ class Base:
             writer = csv.writer(csvfile)
             if cls.__name__ == "Rectangle":
                 for obj in list_objs:
-                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+                    writer.writerow(
+                        [obj.id, obj.width, obj.height, obj.x, obj.y])
             elif cls.__name__ == "Square":
                 for obj in list_objs:
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
@@ -121,7 +122,8 @@ class Base:
             for row in csvreader:
                 if cls.__name__ == "Rectangle":
                     id, width, height, x, y = map(int, row)
-                    obj = cls.create(id=id, width=width, height=height, x=x, y=y)
+                    obj = cls.create(id=id,
+                                     width=width, height=height, x=x, y=y)
                 elif cls.__name__ == "Square":
                     id, size, x, y = map(int, row)
                     obj = cls.create(id=id, size=size, x=x, y=y)
