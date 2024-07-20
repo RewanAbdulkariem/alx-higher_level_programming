@@ -95,15 +95,19 @@ class Base:
         """
         if list_objs is None:
             list_objs = []
-
+        fields = []
         filename = f"{cls.__name__}.csv"
         with open(filename, "w") as csvfile:
             writer = csv.writer(csvfile)
             if cls.__name__ == "Rectangle":
+                fields = ['ID', 'Width', 'Height', 'X', 'Y']
+                writer.writerow(fields)
                 for obj in list_objs:
                     writer.writerow(
                         [obj.id, obj.width, obj.height, obj.x, obj.y])
             elif cls.__name__ == "Square":
+                fields = ['ID', 'Size', 'X', 'Y']
+                writer.writerow(fields)
                 for obj in list_objs:
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
 
@@ -118,14 +122,8 @@ class Base:
 
         instances = []
         with open(filename, 'r') as csvfile:
-            csvreader = csv.reader(csvfile)
+            csvreader = csv.DictReader(csvfile)
             for row in csvreader:
-                if cls.__name__ == "Rectangle":
-                    id, width, height, x, y = map(int, row)
-                    obj = cls.create(id=id,
-                                     width=width, height=height, x=x, y=y)
-                elif cls.__name__ == "Square":
-                    id, size, x, y = map(int, row)
-                    obj = cls.create(id=id, size=size, x=x, y=y)
+                obj = cls.create(**row)
                 instances.append(obj)
         return instances
